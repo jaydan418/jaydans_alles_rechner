@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>everything calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="number" placeholder="enter your first number" id="num1">
+    <input type="number" placeholder="enter your second number" id="num2">
+     <button onclick="sub()">-</button>
+     <button onclick=" add()">+</button>
+     <button onclick=" multi()">x</button>
+     <button onclick=" divi()">÷</button>   
+     <h4 id="result" style="font-size: 50px;"></h4>
+
+     <h1 style="text-align: center; text-decoration: underline;">Prozentrechnung</h1>
+     <h2>Der Grundwert</h2>
+     <input type="number" placeholder=" W" id="number1">
+    <input type="number" placeholder="P%" id="number2">
+    <button onclick="G()">Berechnen</button>
+    <h4 id="result1" style="font-size: 50px;"></h4>
+    <h2>Der Prozentwert</h2>
+    <input type="number" placeholder="G" id="number3">
+    <input type="number" placeholder="P%" id="number4">
+    <button onclick="w()">Berechnen</button>
+    <h4 id="result2" style="font-size: 50px;"></h4>
+    <h2>Der Prozentsatz</h2>
+    <input type="number" placeholder="w" id="number_1">
+    <input type="number" placeholder="G" id="number_2"> 
+    <button onclick="p()">Berechnen</button>
+    <h4 id="result3" style="font-size: 50px;"></h4>
+     <script>
+     function roundUpTo2Decimals(num) {
+     return Math.ceil(num * 100) / 100;
+     }
+
+     function p(){
+        var number_1 = document.getElementById("number_1").value
+        var number_2 = document.getElementById("number_2").value
+        var value = number_1 / number_2 * 100
+        var Prozentsatz = roundUpTo2Decimals(value);
+        document.getElementById("result3").innerText = Prozentsatz.toFixed(2)
+     }
+        function w() {
+            var number_1 = document.getElementById("number3").value
+            var number_2 = document.getElementById("number4").value
+            var value = number_1 * number_2 / 100
+            var Prozentwert = roundUpTo2Decimals(value);
+            document.getElementById("result2").innerText = Prozentwert.toFixed(2)
+        }
+      function G() {
+        var number1 = document.getElementById("number1").value
+        var number2 = document.getElementById("number2").value
+        var value = number1 / number2 * 100
+        var Grundwert = roundUpTo2Decimals(value);
+        document.getElementById("result1").innerText = Grundwert.toFixed(2)
+      }
+
+       function sub() {
+        var num1 = document.getElementById("num1").value
+        var num2 = document.getElementById("num2").value
+        var subtract = num1 - num2
+        document.getElementById("result").innerText = subtract
+       
+       }
+
+       function add() {
+        var num1 = document.getElementById("num1").value
+        var num2 = document.getElementById("num2").value
+        var addition = parseFloat(num1) + parseFloat(num2)
+        document.getElementById("result").innerText = addition
+       }
+
+       function multi() {
+        var num1 = document.getElementById("num1").value
+        var num2 = document.getElementById("num2").value
+        var value = num1 * num2
+        var multi = roundUpTo2Decimals(value)
+        document.getElementById("result").innerText = multi.toFixed(2)
+       }
+
+       function divi() {
+        var num1 = document.getElementById("num1").value
+        var num2 = document.getElementById("num2").value
+        var value = num1 / num2
+        var divi = roundUpTo2Decimals(value)
+        document.getElementById("result").innerText = divi.toFixed(2)
+       }
+
+
+     </script>
+</body>
+</html>

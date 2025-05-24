@@ -1,0 +1,13 @@
+body {
+    animation: backgroundShift 10s infinite;
+    background-size: 400% 400%;
+    text-align: center;
+  }
+  
+  @keyframes backgroundShift {
+    0%   { background-color: #37689f; }
+    25%  { background-color: #541a0a; }
+    50%  { background-color: #57364e; }
+    75%  { background-color: #0edf5e; }
+    100% { background-color: #cb3036; }
+  }
