@@ -31,7 +31,66 @@
     <input type="number" placeholder="G" id="number_2"> 
     <button onclick="p()">Berechnen</button>
     <h4 id="result3" style="font-size: 50px;"></h4>
+
+    <h1 style="text-align: center; text-decoration: underline;">volumen</h1>
+    <h2>Umfang rechnung</h2>
+    <input type="number" placeholder="Seite a" id="numb1">
+    <input type="number" placeholder="Seite b" id="numb2">
+    <input type="number" placeholder="Seite c" id="numb3">
+    <input type="number" placeholder="Seite d" id="numb4">
+    <button onclick="u()">Berechnen</button>
+    <h4 id="result4" style="font-size: 50px;"></h4>
+    <h2>Volum für Rechtecke</h2>
+    <input type="number" placeholder="a" id="numb5">
+    <input type="number" placeholder="b" id="numb6">
+    <button onclick="v()">Berechnen</button>
+    <h4 id="result5" style="font-size: 50px;"></h4>
+    <h2>Volum für Dreiecke</h2>
+    <input type="number" placeholder="g" id="nu1">
+    <input type="number" placeholder="h oder b" id="nu2">
+    <button onclick="dreieck()">Berechnen</button>
+    <result id="result6"></result>
+    <h2>Volum für trapeze</h2>
+    <input type="number" id="n_1" placeholder="a">
+    <input type="number" id="n_2" placeholder="c">
+    <input type="number" id="n_3" placeholder="h">
+    <button onclick="calculateTrapezoidArea()">Berechnen</button>
+    <h4 id="result7"></h4>
      <script>
+
+    function calculateTrapezoidArea() {
+      var base1 = parseFloat(document.getElementById("n_1").value);
+      var base2 = parseFloat(document.getElementById("n_2").value);
+      var height = parseFloat(document.getElementById("n_3").value);
+      var area = ((base1 + base2) * height) / 2;
+      var roundedArea = area.toFixed(2);
+      document.getElementById("result7").innerText = roundedArea;
+    }
+      function dreieck() {
+        var num1 = document.getElementById("nu1").value
+        var num2 = document.getElementById("nu2").value
+        var value = num1 * num2 / 2
+        var dreieck = roundUpTo2Decimals(value)
+        document.getElementById("result6").innerText = dreieck.toFixed(2)
+      }
+
+      function v() {
+        var num1 = document.getElementById("numb5").value
+        var num2 = document.getElementById("numb6").value
+        var value = num1 * num2
+        var volumen = roundUpTo2Decimals(value)
+        document.getElementById("result5").innerText = volumen.toFixed(2)
+      }
+
+        function u() {
+          var num1 = document.getElementById("numb1").value
+          var num2 = document.getElementById("numb2").value
+          var num3 = document.getElementById("numb3").value
+          var num4 = document.getElementById("numb4").value
+          var value = parseFloat(num1) + parseFloat(num2) + parseFloat(num3) + parseFloat(num4)
+          var umfang = roundUpTo2Decimals(value)
+          document.getElementById("result4").innerText = umfang.toFixed(2)
+        }
      function roundUpTo2Decimals(num) {
      return Math.ceil(num * 100) / 100;
      }
