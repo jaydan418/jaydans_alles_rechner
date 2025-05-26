@@ -5,9 +5,9 @@ body {
   }
   
   @keyframes backgroundShift {
-    0%   { background-color: #37689f; }
-    25%  { background-color: #541a0a; }
-    50%  { background-color: #57364e; }
+    0%   { background-color: #0074f8; }
+    25%  { background-color: #ff3700; }
+    50%  { background-color: #ddff00; }
     75%  { background-color: #0edf5e; }
     100% { background-color: #cb3036; }
   }
